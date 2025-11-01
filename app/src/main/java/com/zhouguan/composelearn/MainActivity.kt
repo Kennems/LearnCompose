@@ -16,23 +16,31 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.LiveData
+import com.zhouguan.composelearn.ui.theme.ComPoseLearnTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+//        enableEdgeToEdge()
 
-        setContent {
-            MessageCard(Message("Kotlin", "kkk"))
-        }
-
-        setContent {
-            Scaffold {
-                Column(modifier = Modifier.padding(it)) {
-                    MessageCard(Message("Kotlin", "kkk"))
-                }
+        setContent{
+            ComPoseLearnTheme {
+//                TextWithPaddingToBaseline()
+                ScrollingList()
             }
         }
+
+//        setContent {
+//            MessageCard(Message("Kotlin", "kkk"))
+//        }
+
+//        setContent {
+//            Scaffold {
+//                Column(modifier = Modifier.padding(it)) {
+//                    MessageCard(Message("Kotlin", "kkk"))
+//                }
+//            }
+//        }
     }
 
     @Composable
