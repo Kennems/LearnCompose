@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id ("kotlin-parcelize")
 }
 
 android {
@@ -36,6 +37,7 @@ android {
     }
     buildFeatures {
         compose = true
+        viewBinding = true
     }
 }
 
@@ -65,4 +67,9 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    val material3_version = "1.3.2"
+    implementation("androidx.compose.material3:material3:${material3_version}")
+    implementation("androidx.compose.material:material-icons-extended:1.7.6")
+    implementation("androidx.constraintlayout:constraintlayout-compose:1.1.1")
 }

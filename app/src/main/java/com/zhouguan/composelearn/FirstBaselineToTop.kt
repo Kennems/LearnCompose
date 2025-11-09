@@ -12,6 +12,7 @@ import com.zhouguan.composelearn.ui.theme.ComPoseLearnTheme
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.FirstBaseline
 import androidx.compose.ui.layout.layout
+import androidx.compose.ui.tooling.preview.Preview
 
 @SuppressLint("SuspiciousModifierThen")
 fun Modifier.firstBaselineToTop(
@@ -35,8 +36,16 @@ fun TextWithPaddingToBaseline() {
         Text(
             text = "Hi there",
             Modifier
-                .firstBaselineToTop(24.dp)
+                .firstBaselineToTop(36.dp)
                 .background(Color.Red)
         )
+    }
+}
+
+@Preview
+@Composable
+fun TextWithPaddingToBaselinePreview() {
+    ComPoseLearnTheme {
+        TextWithPaddingToBaseline()
     }
 }
